@@ -1,0 +1,145 @@
+<div id="platform" className="container mx-auto px-6 py-24">
+			<div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 backdrop-blur-sm border border-gray-700 rounded-2xl overflow-hidden">
+				<div className="flex items-center p-8 md:p-16">
+					<div className="items-center">
+						<h2 className="flex flex-col items-center text-4xl md:text-5xl font-bold mb-6">
+							A Platform Built for
+							<span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+								Professional Traders
+							</span>
+						</h2>
+
+						<div className="space-y-4 mb-8">
+							<div className="flex items-start space-x-3">
+								<div className="w-6 h-6 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+									<div className="w-2 h-2 bg-green-500 rounded-full"></div>
+								</div>
+								<div>
+									<div className="font-semibold text-white">
+										Customizable Interface
+									</div>
+									<div className="text-gray-400 text-sm">
+										Drag and drop layouts tailored to your trading style
+									</div>
+								</div>
+							</div>
+
+							<div className="flex items-start space-x-3">
+								<div className="w-6 h-6 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+									<div className="w-2 h-2 bg-green-500 rounded-full"></div>
+								</div>
+								<div>
+									<div className="font-semibold text-white">
+										Advanced Charting
+									</div>
+									<div className="text-gray-400 text-sm">
+										100+ technical indicators and drawing tools
+									</div>
+								</div>
+							</div>
+
+							<div className="flex items-start space-x-3">
+								<div className="w-6 h-6 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+									<div className="w-2 h-2 bg-green-500 rounded-full"></div>
+								</div>
+								<div>
+									<div className="font-semibold text-white">
+										API Integration
+									</div>
+									<div className="text-gray-400 text-sm">
+										Build custom bots and automated strategies
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<button className="flex flex-col items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all transform hover:scale-105">
+							Explore Platform
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		// <div id="platform" className="container mx-auto px-6 py-24">
+		// 	<div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 backdrop-blur-sm border border-gray-700 rounded-2xl overflow-hidden">
+		// 		<div className="p-8 md:p-16">
+		// 			{/* HEADER (CENTERED) */}
+		// 			<h2 className="text-center text-4xl md:text-5xl font-bold mb-12">
+		// 				<span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+		// 					Why It Works
+		// 				</span>
+		// 			</h2>
+
+		// 			{/* CONTENT */}
+		// 			<div className="max-w-xl">
+		// 				<div className="space-y-6 mb-12">
+		// 					{/* Bullet 1 */}
+		// 					<div className="flex items-start space-x-3">
+		// 						<div className="w-6 h-6 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+		// 							<div className="w-2 h-2 bg-green-500 rounded-full" />
+		// 						</div>
+		// 						<div>
+		// 							<div className="font-semibold text-white">
+		// 								Delta-neutral by design
+		// 							</div>
+		// 							{/* <div className="text-gray-400 text-sm">
+		// 								Drag and drop layouts tailored to your trading style
+		// 							</div> */}
+		// 						</div>
+		// 					</div>
+
+		// 					{/* Bullet 2 */}
+		// 					<div className="flex items-start space-x-3">
+		// 						<div className="w-6 h-6 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+		// 							<div className="w-2 h-2 bg-green-500 rounded-full" />
+		// 						</div>
+		// 						<div>
+		// 							<div className="font-semibold text-white">
+		// 								Non-custodial fund flow
+		// 							</div>
+		// 							{/* <div className="text-gray-400 text-sm">
+		// 								100+ technical indicators and drawing tools
+		// 							</div> */}
+		// 						</div>
+		// 					</div>
+
+		// 					{/* Bullet 3 */}
+		// 					<div className="flex items-start space-x-3">
+		// 						<div className="w-6 h-6 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+		// 							<div className="w-2 h-2 bg-green-500 rounded-full" />
+		// 						</div>
+		// 						<div>
+		// 							<div className="font-semibold text-white">
+		// 								Fully automated execution
+		// 							</div>
+		// 							{/* <div className="text-gray-400 text-sm">
+		// 								Build custom bots and automated strategies
+		// 							</div> */}
+		// 						</div>
+		// 					</div>
+		// 					{/* bullet 4 */}
+		// 					<div className="flex items-start space-x-3">
+		// 						<div className="w-6 h-6 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+		// 							<div className="w-2 h-2 bg-green-500 rounded-full" />
+		// 						</div>
+		// 						<div>
+		// 							<div className="font-semibold text-white">
+		// 								Transparent yield mechanics
+		// 							</div>
+		// 							{/* <div className="text-gray-400 text-sm">
+		// 								Build custom bots and automated strategies
+		// 							</div> */}
+		// 						</div>
+		// 					</div>
+		// 				</div>
+		// 			</div>
+
+		// 			{/* BUTTON (CENTERED) */}
+		// 			<div className="flex justify-center">
+		// 				<div className="px-10 py-4 bg-gradient-to-r from-blue-900/30 to-purple-100/30 rounded-lg font-semibold hover:shadow-2xl transition-all transform hover:scale-105">
+		// 					Built for consistency. Not speculation.
+		// 				</div>
+		// 			</div>
+		// 		</div>
+		// 	</div>
+		// </div>
