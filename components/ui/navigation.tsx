@@ -1,0 +1,206 @@
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Brain, Menu } from "lucide-react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+import tensaiYellow from "../../assets/tensaiYellow.svg";
+import { Toast, ToastClose, ToastDescription, ToastTitle } from "./toast";
+import { FaCross, FaInfoCircle } from "react-icons/fa";
+
+export default function Navigation() {
+	const [isScrolled, setIsScrolled] = useState(false);
+	const [isToastOpen, setIsToastOpen] = useState(false);
+	const [isGetStartedClicked, setIsGetStartedClicked] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setIsScrolled(window.scrollY > 100);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
+	const scrollToSection = (sectionId: string) => {
+		const element = document.getElementById(sectionId);
+		if (element) {
+			element.scrollIntoView({ behavior: "smooth" });
+		}
+	};
+
+	return (
+		<motion.nav
+			className={`sticky top-0 w-full z-50 transition-all duration-300 ${
+				isScrolled
+					? "bg-[#1B012F] backdrop-blur-md shadow-lg border-b"
+					: "bg-[#1B012F] backdrop-blur-md border-b"
+			}`}
+			initial={{ y: -100 }}
+			animate={{ y: 0 }}
+			transition={{ duration: 0.5 }}
+		>
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div className="flex justify-between items-center py-4">
+					<div
+						className="flex items-center space-x-2 hover:cursor-pointer"
+						onClick={() => scrollToSection("hero")}
+					>
+						{/* <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
+              <Brain className="text-white w-5 h-5" />
+            </div> */}
+						{/* <span className="text-2xl font-bold text-[#FFC300]">
+							TENSAI kit
+						</span> */}
+						{/* <svg
+							width="130"
+							height="35"
+							viewBox="0 0 281 73"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M95.5637 50.1167H104.896V56H93.6364C88.9196 56 85.7751 52.8555 85.7751 48.1387V24.0476H91.8613V29.6266H104.845V34.952H91.8613V46.82C91.8613 49.0009 93.3828 50.1167 95.5637 50.1167ZM137.673 45.5014H118.4V47.9358C118.4 49.3559 119.06 50.6239 121.646 50.6239H142.846V56H119.871C117.284 56 115.357 55.1885 114.039 53.5655C112.669 51.9426 112.01 50.1167 112.01 48.1387V36.9807C112.01 32.264 114.698 29.6266 119.364 29.6266H137.724C142.441 29.6266 144.824 32.0104 144.824 36.7779V38.8573V38.9587C144.824 43.3205 142.441 45.5014 137.673 45.5014ZM135.999 35.0027H121.19C119.313 35.0027 118.4 35.8649 118.4 37.5894V40.4803H135.999C137.876 40.4803 138.586 39.7702 138.586 38.2994V37.2343C138.586 35.8649 137.977 35.0027 135.999 35.0027ZM151.964 56V37.4879C151.964 32.7711 155.109 29.6266 159.825 29.6266H176.613C178.845 29.6266 180.721 30.3367 182.243 31.8075C183.714 33.2783 184.474 35.2056 184.474 37.4879V56H178.287V39.3645C178.287 37.1329 177.272 35.2056 173.621 35.2056H162.767C159.115 35.2056 158.152 37.1329 158.152 39.3645V56H151.964ZM217.387 56H192.079V50.3196H215.257C217.286 50.3196 217.894 49.3052 217.894 48.0373V47.6822C217.894 46.4143 217.286 45.5521 215.257 45.5521H198.267C193.803 45.5521 191.572 43.0669 191.572 38.1473V36.7272C191.572 32.0104 193.803 29.6266 198.267 29.6266H223.068V35.1549H199.687C197.658 35.1549 197.049 36.22 197.049 37.4879V37.7922C197.049 39.0602 197.658 40.0238 199.687 40.0238H217.387C221.85 40.0238 224.082 42.4583 224.082 47.2765V48.7473C224.082 53.5655 221.85 56 217.387 56ZM238.381 40.0745H257.654V37.6908C257.654 36.2707 256.995 35.1042 254.357 35.1042H233.208V29.6266H256.183C258.77 29.6266 260.697 30.4381 262.067 32.0611C263.385 33.6841 264.045 35.5099 264.045 37.4879V56H238.331C233.614 56 231.23 53.6163 231.23 48.8488V46.7693V46.6679C231.23 42.2554 233.614 40.0745 238.381 40.0745ZM240.055 50.5732L257.654 50.6239V45.1463H240.055C238.077 45.1463 237.468 45.8564 237.468 47.3272V48.3416C237.468 49.7617 238.077 50.5732 240.055 50.5732ZM278.133 19.3309V25.062H271.844V19.3309H278.133ZM278.133 29.6266V56H271.844V29.6266H278.133Z"
+								fill="#FFC300"
+							/>
+							<path
+								d="M54.023 29.4448L42.285 17.7069C41.8945 17.3163 41.2613 17.3163 40.8708 17.7069L0.707107 57.8705C0.316582 58.2611 0.316583 58.8942 0.707108 59.2847L12.4451 71.0227C12.8356 71.4132 13.4688 71.4132 13.8593 71.0227L35.4712 49.4108C36.1949 48.6872 37.7701 49.4614 37.9062 50.4758C38.9921 58.5716 49.1927 67.1659 53.5389 70.7936C53.9369 71.1258 54.5169 71.0945 54.8834 70.7279L67.3171 58.2942C67.7076 57.9037 67.7138 57.2789 67.3129 56.8991C62.5239 52.363 47.4198 39.2058 54.0601 30.8989C54.4049 30.4675 54.4135 29.8354 54.023 29.4448Z"
+								fill="#FFC300"
+							/>
+							<rect
+								x="44"
+								y="13.7046"
+								width="19.3812"
+								height="18.8025"
+								rx="1"
+								transform="rotate(-45 44 13.7046)"
+								fill="#FFC300"
+							/>
+						</svg> */}
+						<svg
+							width="160"
+							height="40"
+							viewBox="0 0 320 80"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<g transform="translate(0,5)">
+								<path
+									d="M40 5 L70 65 L55 65 L48 50 H32 L25 65 H10 L40 5 Z"
+									fill="#FFC300"
+								/>
+
+								<path d="M40 22 L47 38 H33 L40 22 Z" fill="#0E172A" />
+
+								<ellipse
+									cx="40"
+									cy="40"
+									rx="38"
+									ry="14"
+									transform="rotate(-20 40 40)"
+									stroke="#FFC300"
+									strokeWidth="6"
+									fill="none"
+								/>
+							</g>
+
+							<text
+								x="95"
+								y="55"
+								fontSize="42"
+								fontWeight="600"
+								letterSpacing="1"
+								fill="#FFC300"
+								fontFamily="Inter, system-ui, -apple-system, sans-serif"
+							>
+								asthra
+							</text>
+						</svg>
+					</div>
+
+					<div className="hidden md:flex items-center space-x-8 text-[#FFC300]">
+						<button
+							onClick={() => scrollToSection("core")}
+							className="text-[#FFC300] hover:text-[#fff300] transition-colors"
+						>
+							Why to choose
+						</button>
+						<button
+							onClick={() => scrollToSection("how-it-works")}
+							className="text-[#FFC300] hover:text-[#fff300] transition-colors"
+						>
+							How it works
+						</button>
+						<button
+							onClick={() => scrollToSection("why-it-works")}
+							className="text-[#FFC300] hover:text-[#fff300] transition-colors"
+						>
+							Why it works
+						</button>
+						{/* <button
+							onClick={() => scrollToSection("protocols")}
+							className="text-[#FFC300] hover:text-[#fff300] transition-colors"
+						>
+							Protocols
+						</button> */}
+						{/* <div className="relative group">
+							<Link
+								href="https://docs.tensaikit.xyz"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<button
+									className="text-[#FFC300] hover:text-[#fff300] transition-colors flex items-center gap-1"
+									// onClick={() => {
+									// 	setIsGetStartedClicked(false);
+									// 	setIsToastOpen(true);
+									// }}
+								>
+									Docs
+								</button>
+							</Link>
+						</div> */}
+						{/* <Link
+							href="https://github.com/tensaikit/tensaikit"
+							target="_blank"
+							rel="noopener noreferrer"
+						> */}
+						<Button
+							className="bg-[#ffc300] text-black hover:text-[#fff300] transition-colors font-medium"
+							// onClick={() => {
+							// 	setIsToastOpen(true);
+							// 	setIsGetStartedClicked(true);
+							// }}
+						>
+							Coming Soon
+						</Button>
+						{/* </Link> */}
+						<Toast
+							open={isToastOpen}
+							onOpenChange={setIsToastOpen}
+							variant="destructive"
+							className="bg-[#1b012f] border-[#ffc300] border-2"
+							duration={3000}
+						>
+							<ToastTitle className="text-[#ffc300]">
+								<FaInfoCircle className="w-6 h-6" />
+							</ToastTitle>
+							<ToastDescription className="text-[#ffc300]">
+								{isGetStartedClicked
+									? "TensaiKit is being enriched — deployment coming soon."
+									: "Docs will be deployed soon."}
+							</ToastDescription>
+							<ToastClose className="text-[#ffc300]">
+								<FaCross className="w-6 h-6" />
+							</ToastClose>
+						</Toast>
+					</div>
+
+					<button className="md:hidden text-gray-700">
+						<Menu className="w-6 h-6" />
+					</button>
+				</div>
+			</div>
+		</motion.nav>
+	);
+}

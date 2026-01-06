@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`font-serif antialiased`}>{children}</body>
+			<body className={`${_geistMono.className} font-sans`}>{children}</body>
 		</html>
 	);
 }

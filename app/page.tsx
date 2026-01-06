@@ -12,6 +12,7 @@ import {
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import logo from "../public/logo_removed.png";
+import Navigation from "@/components/ui/navigation";
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -27,7 +28,7 @@ export default function Home() {
 
 	return (
 		<div className="min-h-screen bg-white">
-			<header
+			{/* <header
 				className="sticky top-0 z-50 border-b border-[#FFC300]/20 backdrop-blur-lg transition-all duration-300"
 				style={{ backgroundColor: "rgba(28, 2, 50, 0.95)" }}
 			>
@@ -40,9 +41,7 @@ export default function Home() {
 						<div className="flex items-center gap-2">
 							<div
 								className="h-8 w-8 rounded-lg flex items-center justify-center font-bold text-[#1C0232]"
-								// style={{ backgroundColor: "#FFC300" }}
 							>
-								{/* A */}
 								<Image src={logo} alt="" />
 							</div>
 							<span className="font-bold text-xl text-[#FFC300]">Asthra</span>
@@ -64,8 +63,8 @@ export default function Home() {
 						</nav>
 					</div>
 				</div>
-			</header>
-
+			</header> */}
+			<Navigation />
 			<section
 				className="relative overflow-hidden border-b border-[#FFC300]/20"
 				style={{ backgroundColor: "#1C0232" }}
@@ -87,7 +86,7 @@ export default function Home() {
 							<span className="text-white/80">Live on Arbitrum</span>
 						</div> */}
 
-						<h1 className="mb-6 font-bold text-5xl text-balance tracking-tight lg:text-7xl text-white">
+						<h1 className="mb-6 font-bold text-5xl text-balance tracking-tight lg:text-5xl text-white">
 							Market-Neutral
 							<span className="text-[#FFC300]"> Yield</span>
 						</h1>
@@ -125,7 +124,10 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="border-b border-gray-200 py-20 lg:py-28 bg-white">
+			<section
+				id="core"
+				className="border-b border-gray-200 py-20 lg:py-28 bg-white"
+			>
 				<div className="container mx-auto px-4">
 					<div className="mb-16 text-center">
 						<h2 className="mb-4 font-bold text-4xl text-balance tracking-tight lg:text-5xl text-black">
