@@ -1,8 +1,16 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+	Geist,
+	Geist_Mono,
+	Quantico,
+	Bruno_Ace_SC,
+	Turret_Road,
+} from "next/font/google";
 import "./globals.css";
-
+const turret = Turret_Road({ weight: "400", subsets: ["latin-ext"] });
+const bruno = Bruno_Ace_SC({ weight: "400", subsets: ["latin-ext"] });
+const quant = Quantico({ weight: "400", subsets: ["latin"] });
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
@@ -32,7 +40,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${_geistMono.className} font-sans`}>{children}</body>
+			<body className={`${quant.className} font-sans`}>{children}</body>
 		</html>
 	);
 }

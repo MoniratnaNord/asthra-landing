@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+/* @import 'tailwindcss';
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
@@ -122,4 +122,92 @@
   body {
     @apply bg-background text-foreground;
   }
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+@tailwind utilities;
+
+:root {
+	/* H S% L% format for Space-Separated Color Values */
+
+	/* Dark Theme Base - Deep Navy/Black */
+	--background: 224 71% 4%;
+	--foreground: 210 40% 98%;
+
+	/* Primary - Electric Blue / Cyan */
+	--primary: 190 100% 50%;
+	--primary-foreground: 224 71% 4%;
+
+	/* Secondary - Soft Blue/Grey */
+	--secondary: 217 33% 17%;
+	--secondary-foreground: 210 40% 98%;
+
+	/* Muted - For backgrounds of cards */
+	--muted: 217 33% 12%;
+	--muted-foreground: 215 20% 65%;
+
+	/* Accents */
+	--accent: 262 80% 60%;
+	--accent-foreground: 210 40% 98%;
+
+	/* Destructive */
+	--destructive: 0 62% 30%;
+	--destructive-foreground: 210 40% 98%;
+
+	/* Border */
+	--border: 217 33% 20%;
+	--input: 217 33% 20%;
+	--ring: 190 100% 50%;
+
+	/* Fonts */
+	--font-display: "Space Grotesk", sans-serif;
+	--font-body: "Outfit", sans-serif;
+	--font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+	body {
+		@apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
+		font-family: var(--font-body);
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--font-display);
+		@apply tracking-tight;
+	}
+}
+
+@layer utilities {
+	.text-gradient {
+		@apply text-primary;
+	}
+
+	.glass-card {
+		@apply bg-secondary/30 backdrop-blur-md border border-white/5 shadow-xl;
+	}
+
+	.glass-button {
+		@apply bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-sm transition-all duration-300;
+	}
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-track {
+	background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+	background: hsl(var(--secondary));
+	border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: hsl(var(--primary));
 }

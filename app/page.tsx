@@ -12,7 +12,8 @@ import {
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import logo from "../public/logo_removed.png";
-import Navigation from "@/components/ui/navigation";
+// import Navigation from "/components/ui/navigation";
+import HomePage from "./pages/Home";
 
 export default function Home() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -28,43 +29,8 @@ export default function Home() {
 
 	return (
 		<div className="min-h-screen bg-white">
-			{/* <header
-				className="sticky top-0 z-50 border-b border-[#FFC300]/20 backdrop-blur-lg transition-all duration-300"
-				style={{ backgroundColor: "rgba(28, 2, 50, 0.95)" }}
-			>
-				<div
-					className={`container mx-auto px-4 transition-all duration-300 ${
-						isScrolled ? "max-w-4xl" : "max-w-4xl"
-					}`}
-				>
-					<div className="flex h-16 items-center justify-between">
-						<div className="flex items-center gap-2">
-							<div
-								className="h-8 w-8 rounded-lg flex items-center justify-center font-bold text-[#1C0232]"
-							>
-								<Image src={logo} alt="" />
-							</div>
-							<span className="font-bold text-xl text-[#FFC300]">Asthra</span>
-						</div>
-
-						<nav className="flex items-center gap-6">
-							<a
-								href="#how-it-works"
-								className="text-sm font-medium text-[#ffc300] transition-colors hover:text-[#FFC300]"
-							>
-								How it works
-							</a>
-							<a
-								href="#why-it-works"
-								className="text-sm font-medium text-[#ffc300] transition-colors hover:text-[#FFC300]"
-							>
-								Why it works
-							</a>
-						</nav>
-					</div>
-				</div>
-			</header> */}
-			<Navigation />
+			<HomePage />
+			{/* <Navigation />
 			<section
 				className="relative overflow-hidden border-b border-[#FFC300]/20"
 				style={{ backgroundColor: "#1C0232" }}
@@ -72,19 +38,7 @@ export default function Home() {
 				<div className="absolute inset-0 bg-grid-pattern opacity-10" />
 				<div className="container relative mx-auto px-4 py-24 lg:py-32">
 					<div className="mx-auto max-w-3xl text-center">
-						{/* <div
-							className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm"
-							style={{
-								borderColor: "#FFC300",
-								backgroundColor: "rgba(255, 195, 0, 0.1)",
-							}}
-						>
-							<div
-								className="h-2 w-2 rounded-full animate-pulse"
-								style={{ backgroundColor: "#FFC300" }}
-							/>
-							<span className="text-white/80">Live on Arbitrum</span>
-						</div> */}
+						
 
 						<h1 className="mb-6 font-bold text-5xl text-balance tracking-tight lg:text-5xl text-white">
 							Market-Neutral
@@ -112,13 +66,7 @@ export default function Home() {
 								Coming Soon
 								<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
 							</Button>
-							{/* <Button
-								size="lg"
-								variant="outline"
-								className="w-full sm:w-auto bg-transparent text-white border-white/30 hover:bg-white/10"
-							>
-								View Documentation
-							</Button> */}
+							
 						</div>
 					</div>
 				</div>
@@ -128,6 +76,7 @@ export default function Home() {
 				id="core"
 				className="border-b border-gray-200 py-20 lg:py-28 bg-white"
 			>
+				
 				<div className="container mx-auto px-4">
 					<div className="mb-16 text-center">
 						<h2 className="mb-4 font-bold text-4xl text-balance tracking-tight lg:text-5xl text-black">
@@ -160,6 +109,7 @@ export default function Home() {
 							</Card>
 
 							<Card className="group items-center relative overflow-hidden border-gray-200 bg-white p-8 transition-all hover:border-[#FFC300]">
+								
 								<div
 									className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg"
 									style={{ backgroundColor: "#FFC300" }}
@@ -179,6 +129,7 @@ export default function Home() {
 							</Card>
 
 							<Card className="group items-center relative overflow-hidden border-gray-200 bg-white p-8 transition-all hover:border-[#FFC300]">
+								
 								<div
 									className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg"
 									style={{ backgroundColor: "#FFC300" }}
@@ -225,6 +176,7 @@ export default function Home() {
 								className="relative items-center bg-white/5 backdrop-blur-sm p-8 border"
 								style={{ borderColor: "rgba(255, 195, 0, 0.2)" }}
 							>
+								
 								<div className="mb-4 flex items-center justify-between">
 									<div
 										className="inline-flex h-10 w-10 items-center justify-center rounded-full font-bold text-[#1C0232]"
@@ -234,7 +186,6 @@ export default function Home() {
 									</div>
 								</div>
 								<h3 className="mb-3 text-center font-semibold text-2xl text-white">
-									{/* Deposit */}
 									Connect Wallet
 								</h3>
 								<p className="text-[#ffc300] text-center leading-relaxed">
@@ -246,6 +197,7 @@ export default function Home() {
 								className="relative items-center bg-white/5 backdrop-blur-sm p-8 border"
 								style={{ borderColor: "rgba(255, 195, 0, 0.2)" }}
 							>
+								
 								<div className="mb-4 flex items-start justify-between">
 									<div
 										className="inline-flex h-10 w-10 items-center justify-center rounded-full font-bold text-[#1C0232]"
@@ -255,7 +207,7 @@ export default function Home() {
 									</div>
 								</div>
 								<h3 className="mb-3 text-center font-semibold text-2xl text-white">
-									{/* Hedge */}
+							
 									Deposit Assets
 								</h3>
 								<p className="text-[#ffc300] text-center leading-relaxed">
@@ -267,6 +219,7 @@ export default function Home() {
 								className="relative items-center bg-white/5 backdrop-blur-sm p-8 border"
 								style={{ borderColor: "rgba(255, 195, 0, 0.2)" }}
 							>
+								
 								<div className="mb-4 flex items-start justify-between">
 									<div
 										className="inline-flex h-10 w-10 items-center justify-center rounded-full font-bold text-[#1C0232]"
@@ -287,6 +240,7 @@ export default function Home() {
 								className="relative items-center bg-white/5 backdrop-blur-sm p-8 border"
 								style={{ borderColor: "rgba(255, 195, 0, 0.2)" }}
 							>
+								
 								<div className="mb-4 flex items-start justify-between">
 									<div
 										className="inline-flex h-10 w-10 items-center justify-center rounded-full font-bold text-[#1C0232]"
@@ -473,7 +427,7 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-			</footer>
+			</footer> */}
 		</div>
 	);
 }
