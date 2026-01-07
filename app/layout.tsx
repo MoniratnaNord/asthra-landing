@@ -13,15 +13,17 @@ export const metadata: Metadata = {
 	icons: {
 		icon: [
 			{
-				url: "/logo_removed.png",
+				url: "/logo.svg",
 				media: "(prefers-color-scheme: light)",
+				type: "image/svg+xml",
 			},
 			{
-				url: "/logo_removed.png",
+				url: "/logo.svg",
 				media: "(prefers-color-scheme: dark)",
+				type: "image/svg+xml",
 			},
 		],
-		apple: "/logo_removed.png",
+		apple: "/logo.svg",
 	},
 };
 
